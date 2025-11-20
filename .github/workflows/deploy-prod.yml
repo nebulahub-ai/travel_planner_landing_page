@@ -44,28 +44,39 @@ jobs:
 
       - name: Upload to Azure Storage
         run: |
+          # Upload JS and CSS with long cache
           az storage blob upload-batch \
             --account-name ${{ env.AZURE_STORAGE_ACCOUNT }} \
-            --auth-mode login \
+            --auth-mode key \
             --destination '$web' \
             --source ./dist \
             --overwrite \
             --content-cache-control "public, max-age=31536000, immutable" \
-            --pattern "*.js" \
-            --pattern "*.css"
+            --pattern "*.js"
 
           az storage blob upload-batch \
             --account-name ${{ env.AZURE_STORAGE_ACCOUNT }} \
-            --auth-mode login \
+            --auth-mode key \
+            --destination '$web' \
+            --source ./dist \
+            --overwrite \
+            --content-cache-control "public, max-age=31536000, immutable" \
+            --pattern "*.css"
+
+          # Upload HTML with short cache
+          az storage blob upload-batch \
+            --account-name ${{ env.AZURE_STORAGE_ACCOUNT }} \
+            --auth-mode key \
             --destination '$web' \
             --source ./dist \
             --overwrite \
             --content-cache-control "public, max-age=300, must-revalidate" \
             --pattern "*.html"
 
+          # Upload everything else
           az storage blob upload-batch \
             --account-name ${{ env.AZURE_STORAGE_ACCOUNT }} \
-            --auth-mode login \
+            --auth-mode key \
             --destination '$web' \
             --source ./dist \
             --overwrite

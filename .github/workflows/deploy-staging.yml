@@ -82,12 +82,14 @@ jobs:
             --overwrite
 
       - name: Purge Azure Front Door
+        continue-on-error: true
+        timeout-minutes: 5
         run: |
           az afd endpoint purge \
             --resource-group ${{ env.RESOURCE_GROUP }} \
             --profile-name ${{ env.AZURE_CDN_PROFILE }} \
             --endpoint-name ${{ env.AZURE_CDN_ENDPOINT }} \
-            --content-paths "/*"
+            --content-paths "/*" || echo "Purge timed out or failed, but deployment succeeded"
 
       - name: Deployment summary
         run: |

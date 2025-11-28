@@ -2,6 +2,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import heroImage from '@/assets/hero-travel.jpg';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -27,10 +28,12 @@ const Hero = () => {
           <p className="text-xl md:text-2xl text-white/90 mb-10 leading-relaxed max-w-2xl mx-auto">
             {t('hero.subtitle')}
           </p>
-          <Button variant="hero" size="lg" className="text-xl px-10 py-7 h-auto">
+          <Link to="https://calendly.com/nebulahub-info/new-meeting">
+              <Button variant="hero" size="lg" className="text-xl px-10 py-7 h-auto">
             {t('hero.cta')}
             <ArrowRight className="ml-2 h-6 w-6" />
           </Button>
+          </Link>
         </div>
       </div>
 

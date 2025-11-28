@@ -20,12 +20,11 @@ const Demo = () => {
   });
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+    
     toast({
       title: t('demo.success'),
       description: t('demo.subtitle'),
     });
-    setFormData({ name: '', email: '', company: '', message: '' });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

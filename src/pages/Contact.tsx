@@ -12,20 +12,17 @@ const Contact = () => {
       icon: Mail,
       label: t('contact.email'),
       value: t('contact.emailValue'),
-      href: `mailto:${t('contact.emailValue')}`,
     },
     {
       icon: Phone,
       label: t('contact.phone'),
       value: t('contact.phoneValue'),
       additionalValue: t('contact.phone1Value'),
-      href: `tel:${t('contact.phoneValue')}`,
     },
     {
       icon: MapPin,
       label: t('contact.address'),
       value: t('contact.addressValue'),
-      href: null,
     },
   ];
 
@@ -58,23 +55,15 @@ const Contact = () => {
                   <h3 className="text-lg font-semibold text-foreground mb-2">
                     {info.label}
                   </h3>
-                  {info.href ? (
-                    <a
-                      href={info.href}
-                      className="text-muted-foreground hover:text-primary transition-smooth"
-                    >
-                      {info.value}
-                    </a>
-                    
-                  ) : (
                     <p className="text-muted-foreground">{info.value}</p>
-                    
-                  )}
-
                   {info.additionalValue && <p className="text-muted-foreground">{info.additionalValue}</p>}
                 </CardContent>
               </Card>
             ))}
+          </div>
+          <div className='m-auto flex w-full justify-center gap-5 mt-5'>
+            <a href="https://www.facebook.com/profile.php?id=61573891437689">facebook</a>
+            <a href="https://www.linkedin.com/company/nebula-ai-hub/posts/?feedView=all">linkedin</a>
           </div>
         </div>
       </main>

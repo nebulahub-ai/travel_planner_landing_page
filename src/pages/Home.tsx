@@ -1,6 +1,8 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import ProcessCards from '@/components/ProcessCards';
+import Testimonials from '@/components/Testimonials';
+import AnimationVideo from '@/components/AnimationVideo';
 import Footer from '@/components/Footer';
 
 const Home = () => {
@@ -9,6 +11,8 @@ const Home = () => {
       <Header />
       <Hero />
       <ProcessCards />
+      <Testimonials />
+      <AnimationVideo />
       <Footer />
     </div>
   );

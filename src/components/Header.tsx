@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import nebulaLogo from '@/assets/nebula_logo.svg'
+import nebulaLogo from '@/assets/nebula_logo.png'
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Globe, Plane } from 'lucide-react';
 import {
@@ -19,18 +19,18 @@ const Header = () => {
   ];
 
   const switchLanguage = ()=>{
-    const switchingLanguage = language == 'en'? 'ka': 'en'
+    const switchingLanguage = language == 'EN'? 'KA': 'EN'
     setLanguage(switchingLanguage)
 
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border shadow-soft">
+    <header className=" top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border shadow-soft">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 transition-smooth hover:opacity-80">
           <img className='h-14 w-14' src={nebulaLogo}/>
           <span className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Nebula AI
+            AI Travel Concierge 
           </span>
         </Link>
 
@@ -59,7 +59,7 @@ const Header = () => {
             </DropdownMenuContent> */}
 
 
-          <Link to="/demo">
+          <Link to="https://calendly.com/nebulahub-info/new-meeting">
             <Button variant="cta" size="lg">
               {t('nav.bookDemo')}
             </Button>

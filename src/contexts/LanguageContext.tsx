@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
 
-type Language = 'en' | 'ka';
+type Language = 'EN' | 'KA';
 
 interface LanguageContextType {
   language: Language;
@@ -9,7 +9,7 @@ interface LanguageContextType {
 }
 
 const translations = {
-  en: {
+  EN: {
     // Header
     'nav.contact': 'Contact',
     'nav.bookDemo': 'Book a Demo',
@@ -28,6 +28,16 @@ const translations = {
     'process.step3.title': 'Download Your Itinerary',
     'process.step3.description': 'Get a comprehensive travel information file with all details for your perfect trip.',
     
+
+    // Testimonials
+    'testimonial.title': 'Reviews',
+
+    // AnimationVideo
+    'animationVideo.title': 'Video Animation',
+    'animationVideo.subTitle': 'See how AI Travel Concierge creates your perfect trip in seconds',
+    'animationVideo.comingSoon': 'Video coming soon!',
+
+
     // Contact
     'contact.title': 'Get in Touch',
     'contact.subtitle': 'Have questions? We\'d love to hear from you.',
@@ -46,10 +56,18 @@ const translations = {
     'demo.email': 'Email Address',
     'demo.company': 'Company (Optional)',
     'demo.message': 'Tell us about your travel planning needs',
-    'demo.submit': 'Schedule Demo',
+    'demo.submit': 'დემოს დაჯავშნა',
     'demo.success': 'Thank you! We\'ll be in touch soon.',
+
+    // Footer
+    'footer.contactUs': 'Contact Us',
+    'footer.home': 'Home',
+    'footer.reviews': 'Reviews',
+    'footer.contact': 'Contact',
+    'footer.links': 'Quick Links',
+    'footer.description': 'Accelerating businesses with modern AI-driven solutions and automation.'
   },
-  ka: {
+  KA: {
 // Header
     'nav.contact': 'კონტაქტი',
     'nav.bookDemo': 'დემოს დაჯავშნა',
@@ -68,6 +86,16 @@ const translations = {
     'process.step3.title': 'ჩამოტვირთე შენი მარშრუტი',
     'process.step3.description': 'მიიღე სრული საინფორმაციო ფაილი, რომელიც შეიცავს ყველა დეტალს შენი იდეალური მოგზაურობისთვის.',
     
+
+    // Testimonials
+    'testimonial.title': 'მიმოხილვა',  
+    
+    // AnimationVideo
+    'animationVideo.title': 'ვიდეო ანიმაცია',
+    'animationVideo.subTitle': 'ნახე AI Travel Concierge წამებში როგორ შექმნის შენთვის სასურველ მოგზაურობას!',
+    'animationVideo.comingSoon': 'ვიდეო მალე იქნება!',
+
+
     // Contact
     'contact.title': 'დაგვიკავშირდით',
     'contact.subtitle': 'გაქვთ შეკითხვები? სიამოვნებით გიპასუხებთ.',
@@ -82,16 +110,24 @@ const translations = {
     // Demo
     'demo.title': 'დემოს დაჯავშნა',
     'demo.subtitle': 'აღმოაჩინე, თუ როგორ შეუძლია ჩვენს AI სამოგზაურო გეგმარს შეცვალოს შენი დაგეგმვის გამოცდილება.',
+
+    // Footer
+    'footer.contactUs': 'დაგვიკავშირდით',
+    'footer.home': 'Home',
+    'footer.reviews': 'მიმოხილვა',
+    'footer.contact': 'კონტაქტი',
+    'footer.links': 'სწრაფი ლინკები',
+    'footer.description': 'ბიზნესის დაჩქარება თანამედროვე AI-ზე დაფუძნებული გადაწყვეტილებებითა და ავტომატიზაციით.'
   }
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguage] = useState<Language>('EN');
 
   const t = (key: string): string => {
-    return translations[language][key as keyof typeof translations['en']] || key;
+    return translations[language][key as keyof typeof translations['EN']] || key;
   };
 
   return (

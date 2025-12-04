@@ -30,18 +30,18 @@ const Contact = () => {
     <div className="min-h-screen bg-background flex flex-col">
       <Header />
       
-      <main className="pt-32 pb-20">
+      <main className="pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-12 animate-fade-in">
-            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6 text-balance">
               {t('contact.title')}
             </h1>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-lg sm:text-xl text-muted-foreground text-balance">
               {t('contact.subtitle')}
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {contactInfo.map((info, index) => (
               <Card
                 key={index}

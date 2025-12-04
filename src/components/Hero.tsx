@@ -8,7 +8,7 @@ const Hero = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[80vh] md:min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
@@ -20,19 +20,19 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 py-32 text-center">
+      <div className="relative z-10 container mx-auto px-4 py-20 sm:py-28 md:py-32 text-center">
         <div className="max-w-4xl mx-auto animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight text-balance">
             {t('hero.title')}
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-10 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-10 leading-relaxed max-w-2xl mx-auto text-balance">
             {t('hero.subtitle')}
           </p>
           <Link to="https://calendly.com/nebulahub-info/new-meeting">
-              <Button variant="hero" size="lg" className="text-xl px-10 py-7 h-auto">
-            {t('hero.cta')}
-            <ArrowRight className="ml-2 h-6 w-6" />
-          </Button>
+            <Button variant="hero" size="lg" className="text-lg sm:text-xl px-8 sm:px-10 py-6 sm:py-7 h-auto w-full sm:w-auto justify-center">
+              {t('hero.cta')}
+              <ArrowRight className="ml-2 h-6 w-6" />
+            </Button>
           </Link>
         </div>
       </div>

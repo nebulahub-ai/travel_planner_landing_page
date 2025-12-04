@@ -16,7 +16,7 @@ const Footer = () => {
 
       <div className="flex flex-col gap-3">
         <div className="flex items-center gap-3">
-          <img src={nebulaLogo} className="h-16 w-16" alt="Nebula Logo"/>
+          <img src={nebulaLogo} className="h-16 w-16" alt="Nebula Logo" style={{ background: 'none' }}/>
           <span className="text-2xl font-bold text-foreground">Nebula AI Hub</span>
         </div>
         <p className="text-muted-foreground text-sm leading-relaxed">

@@ -50,14 +50,14 @@ const reviews = [
 
 
     return (
-        <section id="reviews" className="py-24 bg-secondary/80">
+        <section id="reviews" className="py-16 sm:py-20 md:py-24 bg-secondary/80">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16 animate-fade-in">
-                    <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
                         {t("testimonial.title")}
                     </h2>
                 </div>
-                <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
                     { reviews.map((review, index)=>{
                         return (
                             <Card
@@ -65,7 +65,7 @@ const reviews = [
                             style={{ animationDelay: `${index * 150}ms`}} 
                             key={index}>
                                 <CardContent className="flex flex-col pt-8 pb-8 text-center">
-                                    <img src={review.imgUrl} className="rounded-sm" alt="No Image"/>
+                                    <img src={review.imgUrl} className="rounded-sm w-full h-52 object-cover" alt="Reviewer"/>
                                     <h3 className="text-2xl font-bold text-foreground mb-4 mt-3">{review.name}, {review.country}</h3>
                                     <p className="text-muted-foreground leading-relaxed">{review.review}</p>
                                 </CardContent>

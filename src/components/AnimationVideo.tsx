@@ -6,16 +6,16 @@ const AnimationVideo = ()=>{
     const { t } = useLanguage()
 
     return (
-        <section className="py-24 bg-secondary/30">
+        <section className="py-16 sm:py-20 md:py-24 bg-secondary/30">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col justify-center text-center mb-16 animate-fade-in">
-                    <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
                         {t("animationVideo.title")}
                     </h2>
-                    <p className="text-lg font-medium text-slate-600 text-foreground mb-4">
+                    <p className="text-base sm:text-lg font-medium text-slate-600 text-foreground mb-4 text-balance">
                         {t('animationVideo.subTitle')}
                     </p>
-                    <p className="text-md font-normal text-slate-600 text-foreground mb-4">
+                    <p className="text-sm sm:text-base font-normal text-slate-600 text-foreground mb-4">
                         {t('animationVideo.comingSoon')}
                     </p>
                 </div>
